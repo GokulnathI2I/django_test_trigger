@@ -19,7 +19,10 @@ class Demo(models.Model):
     last_name = models.CharField(max_length=30)
     suffix = models.CharField(max_length=10, null=True, blank=True)
     super_org = models.ForeignKey(SuperOrg, on_delete=models.CASCADE)
-    name_formats = models.JSONField(null=True, blank=True)
+    display_first_name = models.CharField(max_length=50, null=True, blank=True)
+    display_last_name = models.CharField(max_length=50, null=True, blank=True)
+    display_full_name_first_name_first = models.CharField(max_length=50, null=True, blank=True)
+    display_full_name_last_name_first = models.CharField(max_length=50, null=True, blank=True)
     
     def __str__(self):
         return f"{self.first_name}"
